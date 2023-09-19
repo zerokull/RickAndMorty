@@ -5,7 +5,7 @@ import SwiftUI
 /// CellView of a character for ChannelListView
 struct CharacterCellView: View {
     let character: Character
-
+    
     var body: some View {
         VStack {
             AsyncImage(url: character.avatar) { charImage in
@@ -21,14 +21,14 @@ struct CharacterCellView: View {
             characterName
         }
     }
-
+    
     var characterName: some View {
         Text(character.name)
             .padding()
             .font(.headline)
             .foregroundColor(.black)
     }
-
+    
     var placeholder: some View {
         VStack(spacing: 10) {
             Image("noImage", bundle: .main)

@@ -120,10 +120,10 @@
 				95A8A3992AB87F9700543AC7 /* Views */,
 				95A8A38B2AB8595500543AC7 /* API */,
 				95A8A38E2AB86F3700543AC7 /* Model */,
+				95A8A3A32AB9037800543AC7 /* CharactersDTO.swift */,
 				95A8A3612AB858B200543AC7 /* RickAndMortyApp.swift */,
 				95A8A3652AB858B300543AC7 /* Assets.xcassets */,
 				95A8A3672AB858B300543AC7 /* Preview Content */,
-				95A8A3A32AB9037800543AC7 /* CharactersDTO.swift */,
 			);
 			path = RickAndMorty;
 			sourceTree = "<group>";

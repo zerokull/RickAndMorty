@@ -6,13 +6,13 @@ import SwiftUI
 struct CellDetailView: View {
     @State var character: Character
     @State var location: Location? = nil
-
+    
     var body: some View {
         ScrollView {
             VStack {
                 VStack {
                     textNameTitle
-
+                    
                     AsyncImage(url: character.avatar) { characterImage in
                         characterImage
                             .resizable()
@@ -23,29 +23,26 @@ struct CellDetailView: View {
                     characterDetails
                 }
                 .padding()
-
+                
                 Spacer()
                 locationInfo
                 Spacer()
-
+                
             }.onAppear {
                 getLocation(character.location.url) { location in
                     self.location = location
                 }
             }
         }
-
-
     }
-
-
+    
     /// View variables
     var textNameTitle: some View {
         HStack {
             Text(character.name).bold().font(.largeTitle).accessibilityAddTraits(.isHeader)
         }
     }
-
+    
     var placeholder: some View {
         VStack(spacing: 10) {
             Image("noImage", bundle: .main)
@@ -55,14 +52,15 @@ struct CellDetailView: View {
             Text("Rick is in progress...")
         }
     }
-
+    
     var characterDetails: some View {
         VStack {
             Text("Character details")
                 .bold()
                 .font(.title2)
                 .frame(alignment: .leading)
-
+                .accessibilityAddTraits(.isHeader)
+            
             HStack {
                 Text("Gender:").bold()
                 Text(character.gender)
@@ -77,14 +75,15 @@ struct CellDetailView: View {
             }
         }
     }
-
+    
     var locationInfo: some View {
         VStack {
             Text("Location information")
                 .bold()
                 .font(.title2)
                 .frame(alignment: .leading)
-
+                .accessibilityAddTraits(.isHeader)
+            
             if let location = location {
                 HStack {
                     Text("\(location.type):").bold()
@@ -118,7 +117,7 @@ struct CharDetailView_Previews: PreviewProvider {
                                 type: "Planet",
                                 dimension: "long",
                                 residents: [char.name])
-
+        
         CellDetailView(character: char, location: location)
     }
 }

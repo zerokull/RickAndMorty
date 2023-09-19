@@ -6,7 +6,7 @@ import SwiftUI
 struct CharacterListView: View {
     @EnvironmentObject var dto: CharactersDTO
     @ObservedObject var page = PagedCharacters()
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -15,7 +15,7 @@ struct CharacterListView: View {
                         CharacterCellView(character: character)
                     }
                 }
-
+                
                 if page.membersListFull == false {
                     ProgressView()
                         .onAppear {
