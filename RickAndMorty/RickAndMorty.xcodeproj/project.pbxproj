@@ -25,6 +25,7 @@
 		95A8A3A22AB8834D00543AC7 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8A3A12AB8834D00543AC7 /* CharacterListView.swift */; };
 		95A8A3A42AB9037800543AC7 /* CharactersDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8A3A32AB9037800543AC7 /* CharactersDTO.swift */; };
 		95A8A3A82AB913AF00543AC7 /* PagedCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8A3A72AB913AF00543AC7 /* PagedCharacters.swift */; };
+		95A8A3AD2AB9ECFE00543AC7 /* CharactersJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8A3AC2AB9ECFE00543AC7 /* CharactersJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		95A8A3A12AB8834D00543AC7 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		95A8A3A32AB9037800543AC7 /* CharactersDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDTO.swift; sourceTree = "<group>"; };
 		95A8A3A72AB913AF00543AC7 /* PagedCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagedCharacters.swift; sourceTree = "<group>"; };
+		95A8A3AC2AB9ECFE00543AC7 /* CharactersJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		95A8A3712AB858B300543AC7 /* RickAndMortyTests */ = {
 			isa = PBXGroup;
 			children = (
+				95A8A3A92AB9EC7500543AC7 /* Stubs */,
 				95A8A3722AB858B300543AC7 /* RickAndMortyTests.swift */,
 			);
 			path = RickAndMortyTests;
@@ -198,6 +201,14 @@
 				95A8A3A72AB913AF00543AC7 /* PagedCharacters.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		95A8A3A92AB9EC7500543AC7 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				95A8A3AC2AB9ECFE00543AC7 /* CharactersJSON.swift */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95A8A3732AB858B300543AC7 /* RickAndMortyTests.swift in Sources */,
+				95A8A3AD2AB9ECFE00543AC7 /* CharactersJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

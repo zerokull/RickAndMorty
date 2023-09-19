@@ -8,6 +8,7 @@ struct CharacterListView: View {
     @ObservedObject var page = PagedCharacters()
     
     var body: some View {
+        /// TODO: - create a  accessibility container with container type list
         NavigationView {
             List {
                 ForEach(page.list.results) { character in

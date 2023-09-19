@@ -10,6 +10,7 @@ struct SplashView: View {
     
     // MARK: añadida navegacion
     var body: some View {
+        /// Accessibility remove image from acc navigation it's just decorative
         VStack {
             image
             text

@@ -8,6 +8,7 @@ struct CharacterCellView: View {
     
     var body: some View {
         VStack {
+            /// Accessibility remove image from acc navigation it's just decorative
             AsyncImage(url: character.avatar) { charImage in
                 charImage
                     .resizable()
@@ -23,6 +24,7 @@ struct CharacterCellView: View {
     }
     
     var characterName: some View {
+        /// Accessibility add acc to font and image scale
         Text(character.name)
             .padding()
             .font(.headline)

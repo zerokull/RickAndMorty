@@ -6,7 +6,7 @@ import SwiftUI
 struct CellDetailView: View {
     @State var character: Character
     @State var location: Location? = nil
-    
+
     var body: some View {
         ScrollView {
             VStack {
@@ -52,7 +52,7 @@ struct CellDetailView: View {
             Text("Rick is in progress...")
         }
     }
-    
+    /// TODO: - create a  accessibility container to have better accLabel semantic and easy navigation
     var characterDetails: some View {
         VStack {
             Text("Character details")
@@ -76,6 +76,7 @@ struct CellDetailView: View {
         }
     }
     
+    /// TODO: - create a  accessibility container to have better accLabel semantic and easy navigation
     var locationInfo: some View {
         VStack {
             Text("Location information")

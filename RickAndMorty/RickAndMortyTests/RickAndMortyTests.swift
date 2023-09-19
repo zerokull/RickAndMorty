@@ -5,27 +5,62 @@ import XCTest
 
 final class RickAndMortyTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    func testRequestingChar1() {
+        let expec = expectation(description: "Waiting for character...")
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        // Given
+        let url = "https://rickandmortyapi.com/api/character/1"
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+        // When
+        getCharacter(url) { characters in
+            // Then
+            XCTAssertNotNil(characters)
+            XCTAssertEqual(characters?.results.count, 1)
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+            let charName = characters?.results.first?.name ?? ""
+            XCTAssertEqual(charName, "Rick Sanchez")
+
+            expec.fulfill()
         }
+
+        wait(for: [expec], timeout: 5)
+    }
+
+    func testParseEmptyCharacters() {
+        // Given
+        let emptyData = Data()
+
+        // When
+        parseCharactersJSON(emptyData) { characters in
+            // Then
+            XCTAssertEqual(characters?.results.count, 0)
+        }
+    }
+
+    func testParseFakeCharacters() {
+        // Given
+        let data = Data(charactersJSON.utf8)
+
+        // When
+        parseCharactersJSON(data) { characters in
+            // Then
+            XCTAssertNotNil(characters)
+        }
+    }
+
+    func testParseFakeCharactersName() {
+        // Given
+        let page = PagedCharacters()
+        let data = Data(charactersJSON.utf8)
+        page.list = try! JSONDecoder().decode(Characters.self, from: data)
+        page.list.info.count = 2
+
+        // When
+        page.fetchMembers()
+
+        // Then
+        XCTAssertNotNil(page.list)
+        XCTAssertEqual(page.list.results.first?.name, "Rick Sanchez")
     }
 
 }
